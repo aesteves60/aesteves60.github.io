@@ -2,193 +2,373 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Alexandre Esteves, développeur web à Amiens.">
     <title>Alexandre Esteves — développeur web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:opsz,wght@6..72,600&family=Space+Mono:wght@400;700&display=swap">
+    <!-- icon_names : ne charge que les icônes utilisées (liste triée par ordre alphabétique) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=arrow_outward,code,database,dns,expand_more,fact_check,folder_code,history,layers,local_bar,location_on,mark_email_unread,person,restaurant,school,send,smart_screen,terminal,timeline,web&display=block">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- icônes (Simple Icons), utilisées via <use href="#i-..."> -->
+    <!-- icônes de marque (Simple Icons), référencées par leur id -->
     <svg class="sprite" aria-hidden="true">
         <symbol id="i-github" viewBox="0 0 24 24">
-            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.930 0-1.31.465-2.38 1.235-3.220-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
         </symbol>
         <symbol id="i-linkedin" viewBox="0 0 24 24">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.831 1.637-1.718 3.37-1.718 3.601 0 4.267 2.37 4.267 4.455v6.248zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
         </symbol>
     </svg>
 
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="#profil">
+                <span class="avatar">AE</span>
+                <span>
+                    <span class="brand-name">Alexandre Esteves</span>
+                    <span class="brand-sub">Développeur web · Amiens</span>
+                </span>
+            </a>
+            <div class="topbar-links">
+                <a class="icon-link" href="https://github.com/aesteves60" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+                </a>
+                <a class="icon-link" href="https://www.linkedin.com/in/alexandre-esteves-908571153/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
     <main>
-        <header>
-            <h1>Alexandre Esteves</h1>
-            <p>
-                Développeur web à Amiens, depuis un peu plus de 7 ans.
-                Je travaille surtout en TypeScript et Vue.js côté front,
-                en PHP/Laravel ou Node.js côté back.
-            </p>
-            <p>
-                En ce moment je suis chez TELERIC, sur des applications métier.
-                J'aime bien le front, mais je passe autant de temps sur l'API,
-                le modèle de données et les tests.
-            </p>
-        </header>
-
-        <section>
-            <h2>Parcours</h2>
-            <dl class="rows">
-                <dt>2026 – aujourd'hui</dt>
-                <dd>
-                    <strong>Développeur, TELERIC</strong> — Amiens<br>
-                    Applications métier en Laravel, Vue.js et PostgreSQL.
-                    Nouvelles fonctionnalités, modélisation des données, tests PHPUnit.
-                </dd>
-
-                <dt>Mai 2023 – Fevrier 2025</dt>
-                <dd>
-                    <strong>Ingénieur informatique</strong> — Younup<br>
-                    Mission chez OVH Cloud, Design system :
-                    <ul>
-                        <li>Création de composant avec StencilJs</li>
-                        <li>Ecriture de la doc du composant</li>
-                        <li>Ecriture des stories du composant avec Storybook</li>
-                        <li>Maintenant des composants</li>
-                        <li>Ajout de fonctionnalité</li>
-                        <li>Conception technique des composants</li>
-                        <li>Réalisation des tests unitaire, e2e et d’implémentation avec d’autres langages JS (React et Vue) avec Jest et Puppeteer</li>
-                        <li>Test de l'intégration des composants dans des applications indépendantes en React, Vue et VanillaJs</li>
-                    </ul>
-                    <p>Technologies: Typescript / Javascript, HTML, CSS, SASS, Jest, Puppeteer, Storybook, Yarn, Jira, Github, Visual Studio Code</p>
-                </dd>
-
-                <dt>2019 – Mai 2023</dt>
-                <dd>
-                    <strong>Développeur Fullstack</strong> — Claranet<br>
-                    Développement de 4 projets:
-                    <ul>
-                        <li>Portail ITSM</li>
-                        <li>CMDB référentiel de données de l’entreprise</li>
-                        <li>Portail client</li>
-                        <li>Portail de recrutement pour des cloud OPS</li>
-                    </ul>
-                    <p>Tâche commune:</p>
-                    <ul>
-                        <li>Conception et analyse de feature</li>
-                        <li>Réalisation de spécifications techniques</li>
-                        <li>Développement de feature</li>
-                        <li>Intégration de maquette</li>
-                        <li>Correction de bug</li>
-                        <li>Validations fonctionnelles et techniques</li>
-                        <li>Réalisation de tests</li>
-                        <li>Animation de réunions agiles</li>
-                        <li>Support utilisateurs</li>
-                        <li>Pilotage et animation des points clients pour synchroniser les interconnexions de système d’information (Jira, Service Now)</li>
-                        <li>Connexion avec d’autres systèmes de ticketing client</li>
-                    </ul>
-                    <p>Technologies: NodeJS 14, TypeScript, VueJS 2, Vuetify, Angular 14, Angular Material, WebSocket, Nestjs, MongoDB, Redis, RabbitMQ, gRPC, Jest, Mocha, Jira, Rancher, CI/CD, GitLab CI, GitLab, Visual Studio Code.</p>
-                </dd>
-
-                <dt>2016 – 2018</dt>
-                <dd>
-                    <strong>Intégrateur logiciel en alternance</strong> — Pinglfow
-                    <ul>
-                        <li>Création d’écran de présentation avec un outil interne</li>
-                        <li>Création et intégration de requêtes, procédure ou vues en SQL</li>
-                        <li>Support des applications et des écrans</li>
-                        <li>Développement de feature en accord avec le client en Delphi</li>
-                        <li>Création et maintenance d’écrans complexent en Vuejs 2</li>
-                        <li>Design des écrans</li>
-                        <li>Montage de carte électronique</li>
-                        <li>Mise en place des systèmes développer chez les clients</li>
-                        <li>Intervention de support chez les clients</li>
-                    </ul>
-                </dd>
-
-                <dt>2013 – 2026</dt>
-                <dd>
-                    <strong>Technicien intervention support en alternance</strong> — Orange<br>
-                </dd>
-            </dl>
+        <section id="profil" class="hero">
+            <div class="chips">
+                <span class="chip chip--live"><span class="dot"></span>En poste chez TELERIC</span>
+                <span class="chip"><span class="material-symbols-outlined">location_on</span>Amiens, France</span>
+                <span class="chip"><span class="material-symbols-outlined">terminal</span>+7 ans d'expérience</span>
+            </div>
+            <div>
+                <h1>Alexandre Esteves</h1>
+                <p class="lead">Développeur web à Amiens</p>
+            </div>
+            <div class="card">
+                <p>
+                    Développeur web à Amiens, depuis un peu plus de 7 ans. Je travaille surtout en
+                    <strong>TypeScript</strong> et <strong>Vue.js</strong> côté front, en
+                    <strong>PHP/Laravel</strong> ou <strong>Node.js</strong> côté back.
+                </p>
+                <p class="muted">
+                    En ce moment je suis chez <strong>TELERIC</strong>, sur des applications métier.
+                    J'aime bien le front, mais je passe autant de temps sur l'API, le modèle de données et les tests.
+                </p>
+            </div>
+            <div class="actions">
+                <a class="btn btn--primary" href="https://www.linkedin.com/in/alexandre-esteves-908571153/" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn
+                </a>
+                <a class="btn" href="https://github.com/aesteves60" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub
+                </a>
+            </div>
         </section>
 
-        <section>
-            <h2>Formation</h2>
-            <dl class="rows">
-                <dt>2016 – 2018</dt>
-                <dd>
-                    <strong>Expert en ingénierie informatique</strong><br>
-                    EFFICOM
-                </dd>
-
-                <dt>2015 – 2016</dt>
-                <dd>
-                    <strong>Licence Réseau et Génie Informatique</strong><br>
-                    PROMEO Formation
-                </dd>
-
-                <dt>2013 – 2015</dt>
-                <dd>
-                    <strong>BTS Informatique et Réseau pour l'Industrie et les Services Techniques</strong><br>
-                    PROMEO Formation
-                </dd>
-            </dl>
+        <section id="stack">
+            <div class="section-title">
+                <span class="material-symbols-outlined">layers</span>
+                <h2>Ce que j'utilise</h2>
+            </div>
+            <div class="stack">
+                <div class="card">
+                    <div class="card-label"><span>Front-end</span><span class="material-symbols-outlined">web</span></div>
+                    <div class="tags">
+                        <span class="tag tag--vue">Vue.js</span>
+                        <span class="tag tag--ts">TypeScript</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag tag--light">React (notions)</span>
+                        <span class="tag tag--light">Angular</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-label"><span>Back-end &amp; API</span><span class="material-symbols-outlined">dns</span></div>
+                    <div class="tags">
+                        <span class="tag tag--laravel">PHP / Laravel</span>
+                        <span class="tag tag--node">Node.js</span>
+                        <span class="tag tag--node">NestJS</span>
+                        <span class="tag">Express</span>
+                    </div>
+                </div>
+                <div class="stack-pair">
+                    <div class="card">
+                        <div class="card-label"><span>Données</span><span class="material-symbols-outlined">database</span></div>
+                        <div class="tags">
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-label"><span>Tests &amp; outils</span><span class="material-symbols-outlined">fact_check</span></div>
+                        <div class="tags">
+                            <span class="tag tag--vue">PHPUnit</span>
+                            <span class="tag">Vitest</span>
+                            <span class="tag">Jest</span>
+                            <span class="tag">Git / CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Projets perso</h2>
-            <dl class="rows">
-                <dt>Projet de fin d'études</dt>
-                <dd>
-                    <strong>Apollon, miroir intelligent</strong>
-                    — <a href="https://github.com/aesteves60/Apollon_Mirror" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a><br>
-                    Application Angular affichée derrière un miroir, synchronisée en temps réel
-                    avec un serveur Node.js via socket.io.
-                </dd>
+        <section id="projets">
+            <div class="section-title">
+                <span class="material-symbols-outlined">folder_code</span>
+                <h2>Projets perso</h2>
+            </div>
 
-                <dt>Perso</dt>
-                <dd>
-                    <strong>Barbars</strong><br>
-                    Site de référencement de bars.
-                    Création d'un site web en Vuejs pour reprendre le même fonctionnement que l'application mobile Barbars.
-                </dd>
+            <article class="card">
+                <div class="card-head">
+                    <div>
+                        <div class="title-row">
+                            <h3>Cooked Etchevest</h3>
+                            <span class="tag">Perso</span>
+                        </div>
+                        <span class="sub">Site de recettes</span>
+                    </div>
+                    <span class="thumb material-symbols-outlined">restaurant</span>
+                </div>
+                <p>
+                    Site de recettes pour reprendre la main, avec l'IA, après 1 an de pause dans le développement web.
+                    Vue.js côté front, Laravel côté back, base MySQL.
+                </p>
+                <div class="tags">
+                    <span class="tag tag--vue">Vue.js</span>
+                    <span class="tag tag--laravel">Laravel</span>
+                    <span class="tag">MySQL</span>
+                </div>
+                <div class="links">
+                    <a class="btn btn--small" href="https://github.com/aesteves60/cooked_etchevest" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Frontend
+                    </a>
+                    <a class="btn btn--small" href="https://github.com/aesteves60/cooked_etchevest_laravel" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Backend
+                    </a>
+                </div>
+            </article>
 
-                <dt>Perso</dt>
-                <dd>
-                    <strong>Cooked Etchevest</strong><br>
-                    Site de recette pour prendre la main avec l'IA après 1 ans de pause dans le domaine du développement web.
-                    Le site est en Vuejs côté front et Laravel côté back, avec une base de données MySQL.
-                    <br>
-                    <a href="https://github.com/aesteves60/cooked_etchevest" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub frontend</a><br>
-                    <a href="https://github.com/aesteves60/cooked_etchevest_laravel" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub backend</a><br>
-                </dd>
-            </dl>
+              <article class="card">
+                <div class="card-head">
+                    <div>
+                        <div class="title-row">
+                            <h3>Barbars</h3>
+                            <span class="tag">Perso</span>
+                        </div>
+                        <span class="sub">Référencement de bars</span>
+                    </div>
+                    <span class="thumb material-symbols-outlined">local_bar</span>
+                </div>
+                <p>Site web en Vue.js qui reprend le fonctionnement de l'application mobile Barbars.</p>
+                <div class="tags">
+                    <span class="tag tag--vue">Vue.js</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-head">
+                    <div>
+                        <div class="title-row">
+                            <h3>Apollon</h3>
+                            <span class="tag tag--accent">Fin d'études</span>
+                        </div>
+                        <span class="sub">Miroir intelligent</span>
+                    </div>
+                    <span class="thumb material-symbols-outlined">smart_screen</span>
+                </div>
+                <p>Application Angular affichée derrière un miroir, synchronisée en temps réel avec un serveur Node.js via socket.io.</p>
+                <div class="tags">
+                    <span class="tag">Angular</span>
+                    <span class="tag tag--node">Node.js</span>
+                    <span class="tag">Socket.io</span>
+                </div>
+                <div class="links">
+                    <a class="btn btn--small" href="https://github.com/aesteves60/Apollon_Mirror" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Dépôt GitHub
+                    </a>
+                </div>
+            </article>
         </section>
 
-        <section>
-            <h2>Ce que j'utilise</h2>
-            <dl class="rows">
-                <dt>Front</dt>
-                <dd>Vue.js, TypeScript, JavaScript, HTML/CSS. Un peu de React et d'Angular.</dd>
+        <section id="parcours">
+            <div class="section-title">
+                <span class="material-symbols-outlined">timeline</span>
+                <h2>Parcours</h2>
+            </div>
 
-                <dt>Back</dt>
-                <dd>PHP/Laravel, Node.js, NestJS, Express</dd>
+            <article class="card">
+                <div class="meta">
+                    <span class="date date--current">2026 – aujourd'hui</span>
+                    <span class="pill pill--live">Poste actuel</span>
+                </div>
+                <div>
+                    <h3>Développeur</h3>
+                    <span class="sub">TELERIC — Amiens</span>
+                </div>
+                <p>Applications métier en Laravel, Vue.js et PostgreSQL. Nouvelles fonctionnalités, modélisation des données, tests PHPUnit.</p>
+                <div class="tags">
+                    <span class="tag tag--laravel">Laravel</span>
+                    <span class="tag tag--vue">Vue.js</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">PHPUnit</span>
+                </div>
+            </article>
 
-                <dt>Données</dt>
-                <dd>PostgreSQL, MySQL, MongoDB</dd>
+            <article class="card">
+                <div class="meta">
+                    <span class="date">Mai 2023 – Février 2025</span>
+                    <div>
+                        <span class="pill">Mission OVHcloud</span>
+                        <span class="pill">1 ans et 10 mois</span>
+                    </div>
+                </div>
+                <div>
+                    <h3>Ingénieur informatique</h3>
+                    <span class="sub">Younup</span>
+                </div>
+                <p>Mission chez OVHcloud, dans l'équipe Design System :</p>
+                <ul class="dash">
+                    <li>Création, documentation et stories de composants avec StencilJS et Storybook</li>
+                    <li>Tests unitaires, end-to-end et d'implémentation (Jest, Puppeteer)</li>
+                    <li>Intégration et validation multi-frameworks (React, Vue et VanillaJS)</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag tag--ts">TypeScript</span>
+                    <span class="tag">StencilJS</span>
+                    <span class="tag">Storybook</span>
+                    <span class="tag">Jest</span>
+                    <span class="tag">Puppeteer</span>
+                </div>
+            </article>
 
-                <dt>Tests, outils</dt>
-                <dd>PHPUnit, Vitest, Jest, Git, CI/CD</dd>
-            </dl>
+            <article class="card">
+                <div class="meta">
+                    <span class="date">2019 – Mai 2023</span>
+                    <span class="pill">4 ans</span>
+                </div>
+                <div>
+                    <h3>Développeur Fullstack</h3>
+                    <span class="sub">Claranet</span>
+                </div>
+                <p>Développement de 4 plateformes : portail ITSM, CMDB (référentiel de données de l'entreprise), portail client et portail de recrutement Cloud OPS.</p>
+                <ul class="dash">
+                    <li>Conception de features, spécifications techniques et intégration de maquettes</li>
+                    <li>Interconnexions SI et ticketing client (Jira, ServiceNow)</li>
+                    <li>Animation des réunions agiles et support utilisateurs</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag tag--node">Node.js</span>
+                    <span class="tag tag--node">NestJS</span>
+                    <span class="tag tag--vue">Vue.js</span>
+                    <span class="tag">Angular</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">RabbitMQ</span>
+                    <span class="tag">GitLab CI</span>
+                </div>
+            </article>
+
+            <details class="card">
+                <summary>
+                    <span class="summary-label"><span class="material-symbols-outlined">history</span>Expériences antérieures (Pingflow, Orange)</span>
+                    <span class="material-symbols-outlined chevron">expand_more</span>
+                </summary>
+                <div class="past">
+                    <div>
+                        <div class="past-row">
+                            <h3>Intégrateur logiciel en alternance</h3>
+                            <span class="date">2016 – 2018</span>
+                        </div>
+                        <span class="sub sub--accent">Pingflow</span>
+                        <p class="small">Écrans complexes en Vue.js 2, requêtes SQL, développement Delphi, support et mise en place des systèmes chez les clients.</p>
+                    </div>
+                    <div>
+                        <div class="past-row">
+                            <h3>Technicien intervention support en alternance</h3>
+                            <span class="date">2013 – 2016</span>
+                        </div>
+                        <span class="sub sub--accent">Orange</span>
+                    </div>
+                </div>
+            </details>
         </section>
 
-        <section>
-            <h2>Contact</h2>
-            <p>
-                Le plus simple, c'est
-                <a href="https://www.linkedin.com/in/alexandre-esteves-908571153/" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>.
-                Mon code perso est sur
-                <a href="https://github.com/aesteves60" rel="noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>.
-            </p>
+        <section id="formation">
+            <div class="section-title">
+                <span class="material-symbols-outlined">school</span>
+                <h2>Formation</h2>
+            </div>
+            <div class="card degree">
+                <div>
+                    <h3>Expert en ingénierie informatique</h3>
+                    <span class="sub">EFFICOM</span>
+                </div>
+                <span class="date">2016 – 2018</span>
+            </div>
+            <div class="card degree">
+                <div>
+                    <h3>Licence Réseau et Génie Informatique</h3>
+                    <span class="sub">PROMEO Formation</span>
+                </div>
+                <span class="date">2015 – 2016</span>
+            </div>
+            <div class="card degree">
+                <div>
+                    <h3>BTS Informatique et Réseau pour l'Industrie et les Services Techniques</h3>
+                    <span class="sub">PROMEO Formation</span>
+                </div>
+                <span class="date">2013 – 2015</span>
+            </div>
         </section>
+
+        <section id="contact">
+            <div class="card card--roomy">
+                <div class="contact-head">
+                    <span class="contact-icon material-symbols-outlined">mark_email_unread</span>
+                    <h2>Contact</h2>
+                </div>
+                <p>
+                    Le plus simple, c'est
+                    <a class="text-link" href="https://www.linkedin.com/in/alexandre-esteves-908571153/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+                    Mon code perso est sur
+                    <a class="text-link" href="https://github.com/aesteves60" target="_blank" rel="noopener noreferrer">GitHub</a>.
+                </p>
+                <div class="row-links">
+                    <a class="row-link" href="https://www.linkedin.com/in/alexandre-esteves-908571153/" target="_blank" rel="noopener noreferrer">
+                        <span><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>Profil LinkedIn</span>
+                        <span class="material-symbols-outlined">arrow_outward</span>
+                    </a>
+                    <a class="row-link" href="https://github.com/aesteves60" target="_blank" rel="noopener noreferrer">
+                        <span><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>github.com/aesteves60</span>
+                        <span class="material-symbols-outlined">arrow_outward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>Alexandre Esteves · Amiens</span>
+        </footer>
     </main>
+
+    <nav class="tabbar" aria-label="Sections">
+        <div class="tabbar-inner">
+            <a href="#profil"><span class="material-symbols-outlined">person</span>Profil</a>
+            <a href="#projets"><span class="material-symbols-outlined">folder_code</span>Projets</a>
+            <a href="#parcours"><span class="material-symbols-outlined">timeline</span>Parcours</a>
+            <a href="#stack"><span class="material-symbols-outlined">layers</span>Stack</a>
+            <a href="#contact"><span class="material-symbols-outlined">send</span>Contact</a>
+        </div>
+    </nav>
 </body>
 </html>
